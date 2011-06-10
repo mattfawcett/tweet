@@ -154,7 +154,7 @@
       };
 
       if (s.loading_text) $(widget).append(loading);
-      $(widget).bind("load", function(){
+      $(widget).bind("loaded", function(){
         $.getJSON(build_url(), function(data){
           if (s.loading_text) loading.remove();
           if (s.intro_text) list.before(intro);
@@ -248,7 +248,7 @@
             window.setTimeout(function() { $(widget).trigger("load"); }, 1000 * s.refresh_interval);
           }
         });
-      }).trigger("load");
+      }).trigger("loaded");
     });
   };
 })(jQuery);
